@@ -1,187 +1,306 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/*-----------------------------------*\
+ #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2021 @codewithsadee 
+ */
+
+
+
+
+
+/*-----------------------------------*\
+ #VARIABLES
+\*-----------------------------------*/
 
 :root {
-    --Dark-Blue: hsl(217, 19%, 35%);
-    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
-    --Grayish-Blue: hsl(212, 23%, 69%);
-    --Light-Grayish-Blue: hsl(210, 46%, 95%);
-}
 
-body {
-    font-family: "Manrope", sans-serif;
-    font-size: 13px;
-    background-color: var(--Light-Grayish-Blue);
-}
-
-.contanier {
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 300px;
-    background-color: white;
-    max-width: 50%;
-    transform: scale(0.7);
-    margin: 261px auto;
-    border-top-right-radius: 10px;
-    box-shadow: 0px 12px 30px 0px #00000030;
-    border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-
-img {
-    max-width: 118%;
-    height: 100%;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-
-.contanier-text {
-    transform: translateX(-21px);
-    background-color: white;
-}
-
-.contanier-text h1 {
-    font-size: 15px;
-    color: var(--Dark-Blue);
-    line-height: 1.4;
-    max-width: 17rem;
-    font-weight: 900;
-    transform: scale(1.4);
-    margin-left: 3rem;
-    padding-top: 1rem;
-    padding-bottom: 0.8rem;
-}
-
-.contanier-text p {
-    font-size: 0.9rem;
-    color: var(--Grayish-Blue);
-    padding-top: 0.7rem;
-    font-weight: 500;
-    line-height: 1.5;
-    max-width: 381px;
-}
-
-.text {
-    padding: 2rem 0rem 0rem 3.5rem;
-}
-
-.conainer-profile {
-    display: flex;
-    align-items: center;
-    transform: translateY(14px);
-    padding-left: 1.5rem;
-}
-
-.conainer-profile .profile {
-    display: flex;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.conainer-profile .profile img {
-    border-radius: 50%;
-    width: 10%;
-    margin-right: 1rem;
-}
-
-.text-profile p {
-    color: var(--Grayish-Blue);
-    padding: 0px;
-}
-
-.boxicon {
-    background-color: var(--Grayish-Blue);
-    padding: 6px;
-    border-radius: 54%;
-    display: flex;
-    align-items: center;
-    align-self: center;
+    /**
+     * Colors 
+     */
+  
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue:  hsl(214, 17%, 51%);
+    --light-grayish-blue:     hsl(210, 46%, 95%);
+    --grayish-blue:           hsl(212, 23%, 69%);
+    --white:                  hsl(0, 0%, 100%);
+  
+    /**
+     * Typography 
+     */
+    
+    --fs-13: 13px;
+  
+  }
+  
+  
+  
+  
+  
+  /*-----------------------------------*\
+   #RESET & DEFAULT
+  \*-----------------------------------*/
+  
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--white);
+  }
+  
+  button {
+    border: none;
+    outline: none;
     cursor: pointer;
-
-}
-
-.share {
-    background-color: var(--Dark-Blue);
-    display: none;
+  }
+  
+  img, ion-icon { display: block; }
+  
+  html {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+  }
+  
+  body {
+    min-height: 100vh;
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    background: var(--light-grayish-blue);
+    padding: 20px;
+  }
+  
+  
+  
+  
+  
+  /*-----------------------------------*\
+   #MAIN STYLE
+  \*-----------------------------------*/
+  
+  /**
+   * article card 
+   */
+  
+  .article-card {
+    display: grid;
+    grid-template-columns: 285px minmax(300px, 445px);
+    max-width: 730px;
+    border-radius: 10px;
+    box-shadow: 6px 6px 5px hsla(0, 0%, 0%, 0.02),
+                25px 25px 20px hsla(0, 0%, 0%, 0.03),
+                100px 100px 80px hsla(0, 0%, 0%, 0.05);
+  }
+  
+  
+  .img-box {
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+  }
+  
+  .article-banner {
+    width:  100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left;
+    transition: all 0.5s ease;
+  }
+  
+  .article-card:hover .article-banner { transform: scale(1.1); }
+  
+  .article-content {
+    background: var(--white);
+    padding: 32px 40px;
+    border-radius: 0 10px 10px 0;
+  }
+  
+  .article-title {
+    font-size: 20px;
+    color: var(--very-dark-grayish-blue);
+    margin-bottom: 12px;
+    line-height: 1.4;
+  }
+  
+  .article-text {
+    color: var(--desaturated-dark-blue);
+    font-size: var(--fs-13);
+    line-height: 1.5;
+    margin-bottom: 18px;
+  }
+  
+  .acticle-content-footer {
+    display:         flex;
+    justify-content: space-between;
+    align-items:     center;
+  }
+  
+  .author {
+    display:     flex;
     align-items: center;
-    padding: 1rem;
-    gap: 13px;
-    max-width: 16%;
-    border-radius: 11px;
+  }
+  
+  .author-avater {
+    width:  40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .author-name {
+    color: var(--very-dark-grayish-blue);
+    font-size: var(--fs-13);
+  }
+  
+  .publish-date {
+    color: var(--grayish-blue);
+    font-size: var(--fs-13);
+  }
+  
+  .share { position: relative; }
+  
+  .share-button {
+    background: var(--light-grayish-blue);
+    padding: 6px;
+    border-radius: 20px;
+    font-size: 20px;
+    color: var(--desaturated-dark-blue);
+    transition: all 0.25s ease;
+  }
+  
+  .share-button:hover, .share-button.active {
+    background: var(--desaturated-dark-blue);
+    color: var(--light-grayish-blue);
+  }
+  
+  .share-option {
+    /**
+     * variable for transforming `.share-option` box 
+     * without repeating all transform value
+     */
+    --scale: 0;
+    --translateX: -50%;
+    --translateY: 0;
+    
+    background: var(--very-dark-grayish-blue);
     position: absolute;
-    top: 25.5rem;
-    right: 27rem;
-    padding: 1rem 2rem;
-    transform: scale(0.7);
-}
-
-.share::before {
-    content: "";
+    bottom: calc(100% + 28px);
+    left:   50%;
+    transform: translate(var(--translateX), var(--translateY)) scale(var(--scale));
+    display:     flex;
+    align-items: center;
+    gap: 12px;
+    padding: 17px 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px -5px #0003;
+    transform-origin: bottom;
+    visibility: hidden;
+    transition: all 0.25s ease;
+  }
+  
+  .share-option.active {
+    --scale: 1;
+    visibility: visible;
+  }
+  
+  .share-option::after {
+    content: '';
+    background: var(--very-dark-grayish-blue);
+    width:  20px;
+    height: 20px;
     position: absolute;
-    border-right: 70px solid transparent;
-    border-left: 70px solid transparent;
-    border-top: 74px solid var(--Dark-Blue);
-    border-bottom: 70px solid transparent;
-    top: 1px;
-    transform: scale(0.3);
-    right: 40px;
-
-}
-
-.share p {
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -60%) rotate(45deg);
+  }
+  
+  .share-option span {
+    font-size: 11px;
     text-transform: uppercase;
-    color: var(--Desaturated-Dark-Blue);
-    letter-spacing: 6px;
-}
-
-
-@media (min-width:360px) and (max-width : 900px) {
-    body {
-        max-width: 100%;
-        max-height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    letter-spacing: 5px;
+    color: var(--grayish-blue);
+    margin-right: 5px;
+  }
+  
+  .share-option ion-icon { font-size: 22px; }
+  
+  .share-option ion-icon:hover,
+  .article-title:hover,
+  .author-name:hover { filter: invert(1); }
+  
+  
+  
+  
+  
+  /*-----------------------------------*\
+   #RESPONSIVE
+  \*-----------------------------------*/
+  
+  @media screen and (max-width: 768px) {
+  
+    :root {
+  
+      /**
+       * Typography 
+       */
+      
+      --fs-13: 12px;
+  
     }
-
-    .contanier {
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        max-width: min-content;
-        padding-bottom: 2rem;
+  
+    /**
+     * article card responsive
+     */
+  
+    .article-card {
+      grid-template-columns: 1fr;
+      max-width: 294px;
+      overflow: hidden;
     }
-
-    img {
-        max-width: 30rem;
-        display: flex;
-        border-bottom-left-radius: 0px;
-        border-top-right-radius: 15px;
+  
+    .img-box, .article-content { border-radius: 0; }
+  
+    .img-box { height: 180px; }
+  
+    .article-content { padding: 30px 28px 20px; }
+  
+    .article-title { font-size: 15px; }
+  
+    .article-text { margin-bottom: 30px; }
+  
+    .acticle-content-footer { position: relative; }
+  
+    .author-avater {
+      width:  35px;
+      height: 35px;
     }
-
-    .contanier-text {
-        max-width: 28rem;
-        padding-top: 1rem;
-        margin-right: -1rem;
-        padding-right: 4.5rem;
-        margin-left: 2rem;
-    }
-
+  
     .share {
-        transform: translate(253px, 419px);
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 17px;
-        padding-right: 19rem;
-        overflow: auto;
+      position: static;
+      z-index: 1; 
     }
-    .share::before {
-        border: none;
+  
+    .share-button { font-size: 16px; }
+  
+    .share-option {
+      /**
+       * variable for transforming `.share-option` box 
+       * without repeating all transform value
+       */
+      --scale: 1;
+      --translateX: 0;
+      --translateY: 100%;
+      
+      inset: -20px -28px;
+      border-radius: 0;
+      padding: 17px 30px;
+      z-index: -1;
     }
-}
+  
+    .share-option.active { --translateY: 0; }
+  
+  }
